@@ -2,6 +2,7 @@
 
 require './person'
 require './student'
+require './teacher'
 
 puts 'hello'
 
@@ -30,9 +31,19 @@ s1 = Student.new(11, 3, "Carla", false)
 puts s1.name
 puts s1.play_hooky
 puts s1.can_use_services?
+puts s1.classroom
 
 s2 = Student.new(19, 3, "Robert", false)
 
 puts s2.name
 puts s2.play_hooky
 puts s2.can_use_services?
+puts s2.classroom
+
+puts 'Using teacher class'
+
+t1 = Teacher.new(30, "Maths", "Carlos", false)
+
+puts t1.name
+puts t1.can_use_services?
+puts t1.specialization
