@@ -1,6 +1,7 @@
 require './person'
 require './student'
 require './teacher'
+require './decorator'
 
 puts 'hello'
 
@@ -31,3 +32,19 @@ puts 'Using teacher class'
 t1 = Teacher.new(30, 'Maths', 'Carlos', false)
 
 puts t1.name, t1.can_use_services?, t1.specialization
+
+
+
+person = Person.new(22, 'maximilianus')
+p person.correct_name
+capitalizedPerson = CapitalizeDecorator.new(person)
+p capitalizedPerson.correct_name
+capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
+p capitalizedTrimmedPerson.correct_name
+
+person2 = Person.new(21, 'mark')
+p person2.correct_name
+capitalizedPerson = CapitalizeDecorator.new(person2)
+p capitalizedPerson.correct_name
+capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
+p capitalizedTrimmedPerson.correct_name
