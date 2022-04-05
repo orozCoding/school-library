@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Nameable class
 class Nameable
   # @return [String]
