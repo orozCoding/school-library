@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './person'
 require './student'
 require './teacher'
@@ -33,18 +35,16 @@ t1 = Teacher.new(30, 'Maths', 'Carlos', false)
 
 puts t1.name, t1.can_use_services?, t1.specialization
 
-
-
 person = Person.new(22, 'maximilianus')
 p person.correct_name
-capitalizedPerson = CapitalizeDecorator.new(person)
-p capitalizedPerson.correct_name
-capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
-p capitalizedTrimmedPerson.correct_name
+capitalized_person = CapitalizeDecorator.new(person)
+p capitalized_person.correct_name
+capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
+p capitalized_trimmed_person.correct_name
 
 person2 = Person.new(21, 'mark')
 p person2.correct_name
-capitalizedPerson = CapitalizeDecorator.new(person2)
-p capitalizedPerson.correct_name
-capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
-p capitalizedTrimmedPerson.correct_name
+capitalized_person = CapitalizeDecorator.new(person2)
+p capitalized_person.correct_name
+capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
+p capitalized_trimmed_person.correct_name

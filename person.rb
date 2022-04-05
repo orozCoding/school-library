@@ -1,4 +1,6 @@
-require "./nameable"
+# frozen_string_literal: true
+
+require './nameable'
 
 # Person class
 class Person < Nameable
@@ -30,6 +32,6 @@ class Person < Nameable
   end
 
   def correct_name
-    "#{@name}"
+    @name.to_s
   end
 end

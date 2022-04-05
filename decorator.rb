@@ -1,4 +1,6 @@
-require "./nameable"
+# frozen_string_literal: true
+
+require './nameable'
 
 # Decorator class
 class Decorator < Nameable
