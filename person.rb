@@ -11,7 +11,7 @@ class Person < Nameable
     @rentals = []
   end
 
-  attr_reader :id 
+  attr_reader :id
   attr_accessor :name, :age, :rentals
 
   private
