@@ -53,6 +53,18 @@ def add_book(app)
 
 end
 
+def run_option(app, option)
+  case option
+  when 1 then app.list_books
+  when 2 then app.list_people
+  when 3 then add_person(app)
+  when 4 then add_book(app)
+  else
+    puts 'Please select a valid number from the list!'
+  end
+end
+
+
 def main
   app = App.new
 
