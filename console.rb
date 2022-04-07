@@ -6,7 +6,8 @@ require './rental'
 require './book'
 require './classroom'
 
-# pr = Person.new(18, 'Mark', false)
+pr = Person.new(18, 'Mark', false)
+p pr.name
 
 # p pr.name, pr.age, pr.can_use_services?
 
@@ -20,11 +21,11 @@ require './classroom'
 
 # p 'Using student class'
 
-s1 = Student.new(11, 'Carla', false)
+# s1 = Student.new(11, 'Carla', false)
 
 # p s1.name, s1.play_hooky, s1.can_use_services?, s1.classroom
 
-s2 = Student.new(19, 'Robert', false)
+# s2 = Student.new(19, 'Robert', false)
 
 # p s2.name, s2.play_hooky, s2.can_use_services?, s2.classroom
 
@@ -48,10 +49,10 @@ s2 = Student.new(19, 'Robert', false)
 # capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
 # p capitalized_trimmed_person.correct_name
 
-room1 = Classroom.new('Church')
+# room1 = Classroom.new('Church')
 # p room1.label
 # p room1.students
-room1.add_student(s1)
+# room1.add_student(s1)
 # p room1.students.each { |st| p st.name }
 # p s1.classroom.label
 
@@ -69,20 +70,20 @@ room1.add_student(s1)
 # p s1.rentals
 # p book1.rentals
 
-room2 = Classroom.new('Maths')
-s2.classroom = room2
-room2.students.each { |st| p st.name }
-book2 = Book.new('Learning maths', 'Angel')
-rental2 = Rental.new('2022-04-06', s2, book2)
-s2.rentals.each { |r| p r.book.title }
-book2.rentals.each { |r| p r.person.name }
+# room2 = Classroom.new('Maths')
+# s2.classroom = room2
+# room2.students.each { |st| p st.name }
+# book2 = Book.new('Learning maths', 'Angel')
+# rental2 = Rental.new('2022-04-06', s2, book2)
+# s2.rentals.each { |r| p r.book.title }
+# book2.rentals.each { |r| p r.person.name }
 
-s2.add_rental(rental2)
-s2.rentals.each { |r| p r.book.title }
+# s2.add_rental(rental2)
+# s2.rentals.each { |r| p r.book.title }
 
-p 'book 3'
+# p 'book 3'
 
-book3 = Book.new('Improving maths', 'Miguel')
-book3.add_rental(Rental.new('2022-04-06', s2, book3))
-book3.rentals.each { |r| p r.date }
-s2.rentals.each { |r| p r.book.title }
+# book3 = Book.new('Improving maths', 'Miguel')
+# book3.add_rental(Rental.new('2022-04-06', s2, book3))
+# book3.rentals.each { |r| p r.date }
+# s2.rentals.each { |r| p r.book.title }
