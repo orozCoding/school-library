@@ -42,4 +42,12 @@ class App
     rental = Rental.new(date, person, book)
     @rentals.push(rental)
   end
+
+  def list_rentals_by_id(id)
+    @rentals.each do |r|
+      if r.person.id == id
+        puts "Date: #{r.date}, Book: #{r.book.title} by #{r.book.author}"
+      end
+    end
+  end
 end
