@@ -13,16 +13,23 @@ class App
     @rental = []
   end
 
+  def list_people
+    @people.each { |p| puts "[#{p.class}] Name: #{p.name}, ID: #{p.id}, Age: #{p.age}"}
+  end
+
+  def list_books
+    @books.each { |b| puts "Title: #{b.title}, Author: #{b.author}" }
+  end
+
   def add_person(type, name, age, specialization = '', permission = '')
-    
     perm = false
     perm = true if permission.downcase == 'y'
 
-    person = if type == 1
-              Student.new(age, name, perm)
-            elsif type == 2
-              Teacher.new(age, specialization, name, perm)
-            end  
+    case type
+    when 1 then person = Student.new(age, name, perm)
+    when 2 then person = Teacher.new(age, specialization, name, perm)
+    end
+
     @people.push(person)
   end
 
@@ -31,6 +38,4 @@ class App
     @books.push(book)
   end
 
-  
 end
-
