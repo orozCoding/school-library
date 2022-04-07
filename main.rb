@@ -3,7 +3,7 @@ require './person'
 require './book'
 
 def option_number
-  options= [
+  options = [
     '1 - List all books',
     '2 - List all people',
     '3 - Create a person',
@@ -14,16 +14,15 @@ def option_number
   ]
   puts ' Please choose an option by entering a number:'
 
-  options.each { |o| puts o.to_s}
+  options.each { |o| puts o.to_s }
 
   gets.chomp.to_i
-
 end
 
 def add_person(app)
   puts 'Do you want to register a [1]-Student or a [2]-Teacher? [Input the number]:'
   type = gets.chomp.to_i
-  return puts 'Please input 1 for Student or 2 for Teacher' unless [1,2].include?(type)
+  return puts 'Please input 1 for Student or 2 for Teacher' unless [1, 2].include?(type)
 
   puts 'Name: '
   name = gets.chomp.capitalize
@@ -42,8 +41,6 @@ def add_person(app)
     puts 'Specialization: '
     specialization = gets.chomp.capitalize
     app.add_person(type, name, age, specialization, permission)
-  else
-    return
   end
 
   puts 'Person successfully registered!'
@@ -126,7 +123,6 @@ def main
 
     run_option(app, option)
   end
-
 end
 
 main

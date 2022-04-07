@@ -14,7 +14,7 @@ class App
   end
 
   def list_people
-    @people.each { |p| puts "[#{p.class}] Name: #{p.name}, ID: #{p.id}, Age: #{p.age}"}
+    @people.each { |p| puts "[#{p.class}] Name: #{p.name}, ID: #{p.id}, Age: #{p.age}" }
   end
 
   def list_books
@@ -45,9 +45,7 @@ class App
 
   def list_rentals_by_id(id)
     @rentals.each do |r|
-      if r.person.id == id
-        puts "Date: #{r.date}, Book: #{r.book.title} by #{r.book.author}"
-      end
+      puts "Date: #{r.date}, Book: #{r.book.title} by #{r.book.author}" if r.person.id == id
     end
   end
 end
