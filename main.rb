@@ -19,3 +19,18 @@ def option_number
   gets.chomp.to_i
 
 end
+
+def main
+  app = App.new
+
+  puts 'Welcome to School Library App!'
+  
+  loop do 
+    option = option_number()
+    break if option == 7
+    run_option(app, option)
+  end
+
+end
+
+main
