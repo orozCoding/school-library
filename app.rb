@@ -10,7 +10,7 @@ class App
   def initialize()
     @people = []
     @books = []
-    @rental = []
+    @rentals = []
   end
 
   def list_people
@@ -38,4 +38,8 @@ class App
     @books.push(book)
   end
 
+  def add_rental(date, person, book)
+    rental = Rental.new(date, person, book)
+    @rentals.push(rental)
+  end
 end
