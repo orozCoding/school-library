@@ -12,7 +12,7 @@ def option_number
     '6 - List all rentals for a given person id',
     '7 - Exit'
   ]
-  puts ' Please choos an option by entering a number:'
+  puts ' Please choose an option by entering a number:'
 
   options.each { |o| puts o.to_s}
 
@@ -20,14 +20,48 @@ def option_number
 
 end
 
+def add_person(app)
+  puts 'Do you want to register a (1)-Student  or a (2)-Teacher? [Input the number]'
+  type = gets.chomp.to_i
+  puts 'Name: '
+  name = gets.chomp.capitalize
+  puts 'Age: '
+  age = gets.chomp.to_i
+
+  case type
+  when 1
+    puts 'Has parent permission? [y/n]: '
+    permission = gets.chomp.downcase
+    app.add_person(type, name, age, specialization = '', permission)
+  when 2
+    puts 'Specialization: '
+    specialization = gets.chomp.capitalize
+    app.add_person(type, name, age, specialization, permission = '')
+  end
+
+  puts 'Person successfully registered!'
+end
+
+def add_book(app)
+  puts 'Title: '
+  title = gets.chomp
+  puts 'Author: '
+  author = gets.chomp
+
+  app.add_book(title, author)
+  puts 'Book successfully created!'
+
+end
+
 def main
   app = App.new
 
   puts 'Welcome to School Library App!'
-  
-  loop do 
-    option = option_number()
+
+  loop do
+    option = option_number
     break if option == 7
+
     run_option(app, option)
   end
 
