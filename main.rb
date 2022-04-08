@@ -29,18 +29,15 @@ def add_person(app)
   puts 'Age: '
   age = gets.chomp.to_i
 
-  specialization = ''
-  permission = ''
-
   case type
   when 1
     puts 'Has parent permission? [y/n]: '
     permission = gets.chomp.downcase
-    app.add_person(type, name, age, specialization, permission)
+    app.add_person(type, name, age, specialization || '' , permission)
   when 2
     puts 'Specialization: '
     specialization = gets.chomp.capitalize
-    app.add_person(type, name, age, specialization, permission)
+    app.add_person(type, name, age, specialization, permission || '')
   end
 
   puts 'Person successfully registered!'
